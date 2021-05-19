@@ -1,0 +1,35 @@
+PODS:
+  - ActiveCaptainCommunitySDK (2.0.0)
+  - GzipSwift (5.1.1)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - ActiveCaptainCommunitySDK (from `..`)
+  - GzipSwift
+  - PromiseKit (~> 6.8)
+
+SPEC REPOS:
+  trunk:
+    - GzipSwift
+    - PromiseKit
+
+EXTERNAL SOURCES:
+  ActiveCaptainCommunitySDK:
+    :path: ".."
+
+SPEC CHECKSUMS:
+  ActiveCaptainCommunitySDK: 27e9b749e30b7121fa36afcdade46a2744034cfd
+  GzipSwift: 893f3e48e597a1a4f62fafcb6514220fcf8287fa
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+
+PODFILE CHECKSUM: 55d741572c24300d3fa03fd56f1e2adf5abf47b6
+
+COCOAPODS: 1.10.1
