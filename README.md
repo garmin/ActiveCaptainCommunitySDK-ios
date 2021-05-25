@@ -12,6 +12,13 @@ target "MyApp" do
 end
 ```
 
+# Requesting a Stage API Key
+* Create an account on [ActiveCaptain Community](https://activecaptain.garmin.com).  If you already have a personal account, create a separate account for app development only.
+* Go to the [Developer page](https://activecaptain.garmin.com/Developer) and click the Request Access button.  Fill out the information form and agree to the terms and conditions.
+* Once you have access to the Developer Portal, you can access it [here](https://activecaptain.garmin.com/Profile/DeveloperPortal).
+* In the Developer Portal, click "Add Application" and give your application a name.
+* Your app will be assigned a Stage API key.  Click the eye icon to view it.
+
 # Building and Running Sample App
 * Clone the repository.
 * Initialize submodules recursively: ```git submodule update --init --recursive```
