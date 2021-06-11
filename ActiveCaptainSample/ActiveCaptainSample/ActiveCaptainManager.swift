@@ -333,14 +333,10 @@ final class ActiveCaptainManager {
         var lastModifiedAfter = lastModifiedAfter
         if lastModifiedAfter == nil {
             lastModifiedAfter = database.getTileLastModified(withTileX: Int32(tileCoordinate.tileX), tileY: Int32(tileCoordinate.tileY))?.markerLastUpdate
-
-            if lastModifiedAfter == nil {
-                return Promise.value(SyncResult.fail)
-            }
         }
 
         return firstly {
-            ActiveCaptainAPIClient().syncMarkers(tileX: tileCoordinate.tileX, tileY: tileCoordinate.tileY, lastModifiedAfter: lastModifiedAfter!)
+            ActiveCaptainAPIClient().syncMarkers(tileX: tileCoordinate.tileX, tileY: tileCoordinate.tileY, lastModifiedAfter: lastModifiedAfter)
         }.then { (syncResponse: String) -> Promise<SyncResult> in
             let resultCount = Int(self.database.processSyncMarkersResponse(withJson: syncResponse, tileX: Int32(tileCoordinate.tileX), tileY: Int32(tileCoordinate.tileY)))
 
@@ -374,14 +370,10 @@ final class ActiveCaptainManager {
         var lastModifiedAfter = lastModifiedAfter
         if lastModifiedAfter == nil {
             lastModifiedAfter = database.getTileLastModified(withTileX: Int32(tileCoordinate.tileX), tileY: Int32(tileCoordinate.tileY))?.reviewLastUpdate
-
-            if lastModifiedAfter == nil {
-                return Promise.value(SyncResult.fail)
-            }
         }
 
         return firstly {
-            ActiveCaptainAPIClient().syncReviews(tileX: tileCoordinate.tileX, tileY: tileCoordinate.tileY, lastModifiedAfter: lastModifiedAfter!)
+            ActiveCaptainAPIClient().syncReviews(tileX: tileCoordinate.tileX, tileY: tileCoordinate.tileY, lastModifiedAfter: lastModifiedAfter)
         }.then { (syncResponse: String) -> Promise<SyncResult> in
             let resultCount = Int(self.database.processSyncReviewsResponse(withJson: syncResponse, tileX: Int32(tileCoordinate.tileX), tileY: Int32(tileCoordinate.tileY)))
 

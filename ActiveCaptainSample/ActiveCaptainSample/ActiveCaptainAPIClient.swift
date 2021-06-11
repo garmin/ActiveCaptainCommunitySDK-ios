@@ -91,10 +91,16 @@ class ActiveCaptainAPIClient {
         sendRequest(.post, components)
     }
 
-    func syncMarkers(tileX:Int, tileY:Int, lastModifiedAfter:String) -> Promise<String> {
+    func syncMarkers(tileX:Int, tileY:Int, lastModifiedAfter:String?) -> Promise<String> {
         var components = URLComponents(string:ActiveCaptainConfiguration.apiBaseURL)!
         components.path += "/api/v2/points-of-interest/sync"
-        components.queryItems = [URLQueryItem(name:"tileX", value:String(tileX)), URLQueryItem(name:"tileY", value:String(tileY)), URLQueryItem(name:"lastModifiedAfter", value:lastModifiedAfter)]
+        var queryItems = [URLQueryItem(name:"tileX", value:String(tileX)), URLQueryItem(name:"tileY", value:String(tileY))]
+
+        if let lastModifiedAfter = lastModifiedAfter {
+            queryItems.append(URLQueryItem(name:"lastModifiedAfter", value:lastModifiedAfter))
+        }
+
+        components.queryItems = queryItems
 
         return firstly {
             sendRequest(.get, components)
@@ -103,10 +109,16 @@ class ActiveCaptainAPIClient {
         }
     }
 
-    func syncReviews(tileX:Int, tileY:Int, lastModifiedAfter:String) -> Promise<String> {
+    func syncReviews(tileX:Int, tileY:Int, lastModifiedAfter:String?) -> Promise<String> {
         var components = URLComponents(string:ActiveCaptainConfiguration.apiBaseURL)!
         components.path += "/api/v2/reviews/sync"
-        components.queryItems = [URLQueryItem(name:"tileX", value:String(tileX)), URLQueryItem(name:"tileY", value:String(tileY)), URLQueryItem(name:"lastModifiedAfter", value:lastModifiedAfter)]
+        var queryItems = [URLQueryItem(name:"tileX", value:String(tileX)), URLQueryItem(name:"tileY", value:String(tileY))]
+
+        if let lastModifiedAfter = lastModifiedAfter {
+            queryItems.append(URLQueryItem(name:"lastModifiedAfter", value:lastModifiedAfter))
+        }
+
+        components.queryItems = queryItems
 
         return firstly {
             sendRequest(.get, components)
