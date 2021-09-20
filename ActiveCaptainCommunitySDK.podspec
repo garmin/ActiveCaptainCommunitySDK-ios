@@ -5,7 +5,7 @@ submoduleBase = "#{cppBase}/submodules"
 Pod::Spec.new do |spec|
 
   spec.name         = "ActiveCaptainCommunitySDK"
-  spec.version      = "2.0.0"
+  spec.version      = "2.0.1"
   spec.summary      = "Garmin ActiveCaptain Community SDK"
   spec.description  = <<-DESC
     SDK for maintaining and retrieving data from Garmin ActiveCaptain Community SQLite database.
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios
 
-  spec.source       = { :git => "https://github.com/garmin/ActiveCaptainCommunitySDK-ios.git", :tag => "v2.0.0", :submodules => true }
+  spec.source       = { :git => "https://github.com/garmin/ActiveCaptainCommunitySDK-ios.git", :tag => "v2.0.1", :submodules => true }
 
   spec.ios.deployment_target = '12.0'
   spec.source_files  = "#{sdkBase}/*.{h,m,mm}", "#{cppBase}/*.{c,cpp}", "#{cppBase}/{Adapters,DTO,Json,Navionics,Presentation,Presentation/Field,Presentation/Section,Queries,Thirdparty,Thirdparty/Navionics/Extensions}/*.{c,cpp}", "#{submoduleBase}/SQLiteCpp/sqlite3/sqlite3.c", "#{submoduleBase}/SQLiteCpp/src/*.cpp"
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   spec.preserve_paths = "#{cppBase}/Include/**/*.{h,hpp}", "#{cppBase}/Navionics/**/*.{h,hpp}", "#{cppBase}/submodules/**/*.{h,hpp}", "#{cppBase}/Thirdparty/**/*.{h,hpp}"
   spec.public_header_files = "#{sdkBase}/*.h"
   spec.resource_bundles = {
-    'ActiveCaptainCommunitySDK' => ["#{sdkBase}/assets/acdb/img/*.png", "#{sdkBase}/assets/acdb/img/map/*.bmp"]
+    'ActiveCaptainCommunitySDK' => ["#{sdkBase}/assets/acdb/img/*.png", "#{sdkBase}/assets/acdb/img/map/*.png"]
   }
   spec.compiler_flags = "-DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_RTREE -DSQLITE_TEMP_STORE=3"
   spec.requires_arc = true

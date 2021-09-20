@@ -22,35 +22,35 @@ extension MapIcon {
     var filename: String {
         switch self {
         case .unknown:
-            return "H_UX_Icon_Acdb_stacked_points.bmp"
+            return "stacked_points_icon.png"
         case .anchorage:
-            return "H_UX_Icon_Acdb_anchorage.bmp"
+            return "anchorage_icon.png"
         case .hazard:
-            return "H_UX_Icon_Acdb_hazard.bmp"
+            return "hazard_icon.png"
         case .marina:
-            return "H_UX_Icon_Acdb_marina.bmp"
+            return "marina_icon.png"
         case .boatRamp:
-            return "H_UX_Icon_Acdb_lk_boatramp.bmp"
+            return "boatramp_icon.png"
         case .business:
-            return "H_UX_Icon_Acdb_lk_shop.bmp"
+            return "shop_icon.png"
         case .inlet:
-            return "H_UX_Icon_Acdb_lk_inlet.bmp"
+            return "inlet_icon.png"
         case .bridge:
-            return "H_UX_Icon_Acdb_lk_bridge.bmp"
+            return "bridge_icon.png"
         case .lock:
-            return "H_UX_Icon_Acdb_lk_lock.bmp"
+            return "lock_icon.png"
         case .dam:
-            return "H_UX_Icon_Acdb_lk_dam.bmp"
+            return "dam_icon.png"
         case .ferry:
-            return "H_UX_Icon_Acdb_lk_ferry.bmp"
+            return "ferry_icon.png"
         case .anchorageSponsor:
-            return "H_UX_Icon_Acdb_anchorage_sponsor.bmp"
+            return "anchorage_sponsored_icon.png"
         case .businessSponsor:
-            return "H_UX_Icon_Acdb_lk_shop_sponsor.bmp"
+            return "shop_sponsored_icon.png"
         case .marinaSponsor:
-            return "H_UX_Icon_Acdb_marina_sponsor.bmp"
+            return "marina_sponsored_icon.png"
         @unknown default:
-            return "H_UX_Icon_Acdb_stacked_points.bmp"
+            return "stacked_points_icon.png"
         }
     }
 }
