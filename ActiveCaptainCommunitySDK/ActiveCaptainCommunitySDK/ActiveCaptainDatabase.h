@@ -144,7 +144,7 @@ typedef struct TileXY {
     @param maxResultCount maximum number of results to return
     @return Array of SearchMarkers in the given bounding box (matching name, if specified)
  */
-- (NSArray<SearchMarker *> *)getSearchMarkersByName: (NSString *)name south:(double)south west:(double)west north:(double)north east:(double)east maxResultCount:(int)maxResultCount;
+- (NSArray<SearchMarker *> *)getSearchMarkersByName: (NSString *)name south:(double)south west:(double)west north:(double)north east:(double)east maxResultCount:(int)maxResultCount escapeHtml:(bool)escapeHtml;
 /*!
    @brief Set content of HTML &lt;head&gt; tag to be used in rendered HTML.  If not called, default CSS will be used.
    @param value content of HTML &lt;head&gt; tag, including CSS style values

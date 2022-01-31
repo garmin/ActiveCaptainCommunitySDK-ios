@@ -113,7 +113,7 @@ class SearchViewController: UITableViewController, UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text!.count > ActiveCaptainConfiguration.markerMinSearchLength {
-            searchMarkers = ActiveCaptainManager.instance.database.getSearchMarkers(byName: searchController.searchBar.text!, south:-90.0, west:-180.0, north: 90.0, east:180.0, maxResultCount:Int32(ActiveCaptainConfiguration.markerMaxSearchResults))
+            searchMarkers = ActiveCaptainManager.instance.database.getSearchMarkers(byName: searchController.searchBar.text!, south:-90.0, west:-180.0, north: 90.0, east:180.0, maxResultCount:Int32(ActiveCaptainConfiguration.markerMaxSearchResults), escapeHtml:false)
         }
 
         self.tableView.reloadData()

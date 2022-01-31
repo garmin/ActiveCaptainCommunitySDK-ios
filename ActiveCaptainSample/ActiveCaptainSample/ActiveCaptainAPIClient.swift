@@ -21,7 +21,7 @@ import PromiseKit
 class ActiveCaptainAPIClient {
     func getAccessToken(serviceUrl: String, serviceTicket: String) -> Promise<String> {
         var components = URLComponents(string:ActiveCaptainConfiguration.apiBaseURL)!
-        components.path += "/api/v1/authentication/access-token"
+        components.path += "/api/v2/authentication/access-token"
         components.queryItems = [URLQueryItem(name:"serviceUrl", value:serviceUrl), URLQueryItem(name:"serviceTicket", value:serviceTicket)]
 
         return sendRequestAndDecode(String.self, .get, components)

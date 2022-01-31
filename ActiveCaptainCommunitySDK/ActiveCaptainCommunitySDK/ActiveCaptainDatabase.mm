@@ -23,6 +23,7 @@ limitations under the License.
 #import "NavDateTimeExtensions.hpp"
 #import "Repository.hpp"
 #import "SearchMarker.h"
+#import "StringUtil.hpp"
 #import "UpdateService.hpp"
 #import "UTL_pub_lib_cnvt.h"
 #import "Version.hpp"
@@ -147,7 +148,7 @@ using UpdateServicePtr = std::shared_ptr<Acdb::IUpdateService>;
 }
 
 // DataService
-- (NSArray<SearchMarker *> *)getSearchMarkersByName: (NSString *)name south:(double)south west:(double)west north:(double)north east:(double)east maxResultCount:(int)maxResultCount {
+- (NSArray<SearchMarker *> *)getSearchMarkersByName: (NSString *)name south:(double)south west:(double)west north:(double)north east:(double)east maxResultCount:(int)maxResultCount escapeHtml:(bool)escapeHtml {
     Acdb::SearchMarkerFilter filter;
 
     std::string nameStr = [self toString:name];
@@ -202,6 +203,11 @@ using UpdateServicePtr = std::shared_ptr<Acdb::IUpdateService>;
 
     NSMutableArray *results = [[NSMutableArray alloc] init];
     for (std::vector<Acdb::ISearchMarkerPtr>::iterator it = searchMarkers.begin(); it != searchMarkers.end(); it++) {
+        std::string markerName = it->get()->GetName();
+        if (escapeHtml == true) {
+            Acdb::String::HtmlEscape(markerName);
+        }
+
         std::map<ACDB_type_type, MarkerType>::const_iterator markerTypeIt = MARKER_TYPES.find((*it)->GetType());
         if (markerTypeIt == MARKER_TYPES.end()) {
             markerTypeIt = MARKER_TYPES.begin();
@@ -214,7 +220,7 @@ using UpdateServicePtr = std::shared_ptr<Acdb::IUpdateService>;
 
         SearchMarker* result = [[SearchMarker alloc] init];
         result.markerId = (*it)->GetId();
-        result.name = [self toNSString:(*it)->GetName()];
+        result.name = [self toNSString:markerName];
         result.markerType = markerTypeIt->second;
         result.latitude = (*it)->GetPosition().lat * UTL_SEMI_TO_DEG;
         result.longitude = (*it)->GetPosition().lon * UTL_SEMI_TO_DEG;
