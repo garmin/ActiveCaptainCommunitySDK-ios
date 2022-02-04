@@ -5,7 +5,7 @@ submoduleBase = "#{cppBase}/submodules"
 Pod::Spec.new do |spec|
 
   spec.name         = "ActiveCaptainCommunitySDK"
-  spec.version      = "2.0.1"
+  spec.version      = "2.0.2"
   spec.summary      = "Garmin ActiveCaptain Community SDK"
   spec.description  = <<-DESC
     SDK for maintaining and retrieving data from Garmin ActiveCaptain Community SQLite database.
@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios
 
-  spec.source       = { :git => "https://github.com/garmin/ActiveCaptainCommunitySDK-ios.git", :tag => "v2.0.1", :submodules => true }
+  spec.source       = { :git => "https://github.com/garmin/ActiveCaptainCommunitySDK-ios.git", :tag => "v2.0.2", :submodules => true }
 
   spec.ios.deployment_target = '12.0'
   spec.source_files  = "#{sdkBase}/*.{h,m,mm}", "#{cppBase}/*.{c,cpp}", "#{cppBase}/{Adapters,DTO,Json,Navionics,Presentation,Presentation/Field,Presentation/Section,Queries,Thirdparty,Thirdparty/Navionics/Extensions}/*.{c,cpp}", "#{submoduleBase}/SQLiteCpp/sqlite3/sqlite3.c", "#{submoduleBase}/SQLiteCpp/src/*.cpp"
