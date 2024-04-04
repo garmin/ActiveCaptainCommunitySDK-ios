@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
 
   spec.source       = { :git => "https://github.com/garmin/ActiveCaptainCommunitySDK-ios.git", :tag => "v2.0.2", :submodules => true }
 
-  spec.ios.deployment_target = '12.0'
+  spec.ios.deployment_target = '15.0'
   spec.source_files  = "#{sdkBase}/*.{h,m,mm}", "#{cppBase}/*.{c,cpp}", "#{cppBase}/{Adapters,DTO,Json,Navionics,Presentation,Presentation/Field,Presentation/Section,Queries,Thirdparty,Thirdparty/Navionics/Extensions}/*.{c,cpp}", "#{submoduleBase}/SQLiteCpp/sqlite3/sqlite3.c", "#{submoduleBase}/SQLiteCpp/src/*.cpp"
   spec.exclude_files  = "#{cppBase}/Thirdparty/FileUtilWindows.cpp"
   spec.preserve_paths = "#{cppBase}/Include/**/*.{h,hpp}", "#{cppBase}/Navionics/**/*.{h,hpp}", "#{cppBase}/submodules/**/*.{h,hpp}", "#{cppBase}/Thirdparty/**/*.{h,hpp}"
