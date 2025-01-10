@@ -1,5 +1,5 @@
 PODS:
-  - ActiveCaptainCommunitySDK (2.0.2)
+  - ActiveCaptainCommunitySDK (2.0.4)
   - GzipSwift (5.1.1)
   - PromiseKit (8.1.1):
     - PromiseKit/CorePromise (= 8.1.1)
@@ -26,10 +26,10 @@ EXTERNAL SOURCES:
     :path: ".."
 
 SPEC CHECKSUMS:
-  ActiveCaptainCommunitySDK: d14636959f63901d3f784c157e84cb56619461ce
+  ActiveCaptainCommunitySDK: b7000c4e9cbfbfb16ea4ebcf98ad3640c334399f
   GzipSwift: 893f3e48e597a1a4f62fafcb6514220fcf8287fa
   PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
 
 PODFILE CHECKSUM: b30cd62392af3be1454459c6b114acb2c169c013
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
