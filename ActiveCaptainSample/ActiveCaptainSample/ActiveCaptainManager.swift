@@ -18,6 +18,7 @@ import ActiveCaptainCommunitySDK
 import Foundation
 import os
 import PromiseKit
+import PMKFoundation
 
 enum NotifyType : String {
     case markerSelected = "markerSelected"
@@ -29,7 +30,7 @@ enum NotifyType : String {
 }
 
 let MarkerIdUserInfoKey = "markerId"
-let ResourceBundleName = "ActiveCaptainCommunitySDK.bundle"
+let ResourceBundleName = "ActiveCaptainCommunitySDK_ActiveCaptainCommunitySDK.bundle"
 
 final class ActiveCaptainManager {
     let jwtKey = "com.garmin.marine.activecaptain.sampleapp.jwt"

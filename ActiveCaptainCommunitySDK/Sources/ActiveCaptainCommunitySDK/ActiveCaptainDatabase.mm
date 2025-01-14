@@ -15,18 +15,18 @@ limitations under the License.
 ------------------------------------------------------------------------------*/
 
 #import "AcdbUrlAction.h"
-#import "AcdbUrlAction.hpp"
+#import "Acdb/AcdbUrlAction.hpp"
 #import "ActiveCaptainDatabase.h"
-#import "DataService.hpp"
-#import "ISettingsManager.hpp"
+#import "Acdb/DataService.hpp"
+#import "Acdb/ISettingsManager.hpp"
 #import "LastUpdateInfoType.h"
 #import "NavDateTimeExtensions.hpp"
-#import "Repository.hpp"
+#import "Acdb/Repository.hpp"
 #import "SearchMarker.h"
-#import "StringUtil.hpp"
-#import "UpdateService.hpp"
+#import "Acdb/StringUtil.hpp"
+#import "Acdb/UpdateService.hpp"
 #import "UTL_pub_lib_cnvt.h"
-#import "Version.hpp"
+#import "Acdb/Version.hpp"
 
 using DataServicePtr = std::shared_ptr<Acdb::IDataService>;
 using UpdateServicePtr = std::shared_ptr<Acdb::IUpdateService>;

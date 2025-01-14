@@ -1,17 +1,6 @@
 # ActiveCaptain Community SDK - iOS
 The ActiveCaptain Community SDK contains functions for storing and rendering data from a SQLite database exported from [ActiveCaptain Community](https://activecaptain.garmin.com).
 
-# Quick Start
-In your [Podfile](https://guides.cocoapods.org/syntax/podfile.html):
-
-```Ruby
-use_frameworks!
-
-target "MyApp" do
-  pod "ActiveCaptainCommunitySDK", "~> 2.0"
-end
-```
-
 # Requesting a Stage API Key
 * Create an account on [ActiveCaptain Community](https://activecaptain.garmin.com).  If you already have a personal account, create a separate account for app development only.
 * Go to the [Developer page](https://activecaptain.garmin.com/Developer) and click the Request Access button.  Fill out the information form and agree to the terms and conditions.
@@ -22,8 +11,7 @@ end
 # Building and Running Sample App
 * Clone the repository.
 * Initialize submodules recursively: ```git submodule update --init --recursive```
-* Install Cocoapods: ```pod install --project-directory=ActiveCaptainSample```
-* In Xcode, open ActiveCaptainSample/ActiveCaptainSample.xcworkspace
+* In Xcode, open ActiveCaptainSample/ActiveCaptainSample.xcodeproj and let the dependencies be fetched.
 * In ActiveCaptainSample/ActiveCaptainConfiguration.swift, replace "STAGE_API_KEY_HERE" with your Stage API key.
 * Product > Build
 * Product > Run

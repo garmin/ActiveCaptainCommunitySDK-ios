@@ -20,6 +20,7 @@ import Foundation
 import Gzip
 import os
 import PromiseKit
+import PMKFoundation
 
 extension Data {
     var md5Hash : String {

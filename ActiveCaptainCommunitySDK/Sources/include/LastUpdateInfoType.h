@@ -1,0 +1,1 @@
+../ActiveCaptainCommunitySDK/LastUpdateInfoType.h
